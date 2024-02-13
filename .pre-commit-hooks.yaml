@@ -151,3 +151,11 @@
     - --args=terraform
   files: \.tf$
   require_serial: true
+
+- id: tfsort
+  name: tfsort
+  description: Runs tfsort on Terraform files
+  entry: hooks/terraform_tfsort.sh
+  language: script
+  files: (\.tf|\.tfvars)$
+  exclude: \.terraform\/.*$
